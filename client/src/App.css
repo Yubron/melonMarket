@@ -1,0 +1,35 @@
+.container {
+    color: white;
+    background-color: gold;    
+    min-height: 100vh;
+    margin: 0 400px;
+}
+.Header {
+    background-color: rebeccapurple;
+    min-height: 10vh;
+}
+
+.Main {
+    background-color: rosybrown;
+    min-height: 90vh;
+}
+
+.Footer {
+    background-color: royalblue;
+    min-height: 10vh;
+}
+a { text-decoration:none } 
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#logo { 
+    width: 20%;
+    margin-right: 10%;
+}
+
+#search {
+    width: 50%;
+}
