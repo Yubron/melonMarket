@@ -7,7 +7,7 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import PostDetail from './components/postDetail/PostDetail';
 import Main from './components/main/Main';
-import Test from './components/testPage/Test';
+import Sidebar from './components/sidebar/Sidebar';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
             <Route exact path="/" component={Main} />
             <Route exact path="/detail" component={PostDetail} />
           </Switch>
-          <Test />
+          <Sidebar />
         </div>
       </div>
       <Footer />

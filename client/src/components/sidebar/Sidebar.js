@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-function Test() {
+function Sidebar() {
     return (
         <div className="Sidebar">
             <div className="test">
@@ -19,4 +19,4 @@ function Test() {
     )
 }
 
-export default Test
+export default Sidebar
