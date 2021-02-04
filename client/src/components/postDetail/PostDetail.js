@@ -1,14 +1,20 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 
 
 
 function PostDetail() {
-  
+
   useEffect(() => {
-    axios.get('/api/hello')
-    .then(response => console.log(response.data));
+    axios.get('/api/users')
+      .then(response => console.log(response.data));
   }, [])
+
+  function test() {
+    axios.post('/api/users')
+      .then(response => console.log(response.data));
+  }
+
 
   return (
     <div className="Detail">
@@ -18,6 +24,7 @@ function PostDetail() {
             src="/images/pic3.png"
             alt="product"
             className="productDetailImage"
+            onClick={test}
           />
         </section>
       </article>

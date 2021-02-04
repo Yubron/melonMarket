@@ -1,0 +1,18 @@
+.test {
+    display: flex;
+    justify-content: space-between;
+    
+    margin: .3rem;
+}
+
+.btn_group {
+    text-align: center;
+}
+
+.btn_login {
+ width: 80%;
+}
+
+.btn_register {
+ width: 80%;
+}
