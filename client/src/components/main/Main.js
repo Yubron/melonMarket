@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function main() {
+function Main() {
   return (
     <div className="Main">
       <p id="HotItem">
@@ -124,4 +124,4 @@ function main() {
   );
 }
 
-export default main;
+export default Main;

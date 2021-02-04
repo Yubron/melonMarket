@@ -1,6 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import axios from 'axios';
 
-function postDetail() {
+
+
+function PostDetail() {
+  
+  useEffect(() => {
+    axios.get('/api/hello')
+    .then(response => console.log(response.data));
+  }, [])
+
   return (
     <div className="Detail">
       <article id="content" data-id="1">
@@ -16,4 +25,4 @@ function postDetail() {
   );
 }
 
-export default postDetail;
+export default PostDetail;
