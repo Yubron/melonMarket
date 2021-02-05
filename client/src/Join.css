@@ -1,0 +1,12 @@
+.Join {
+    background-color: gray;
+    min-height: 100vh;
+    margin-top: 100px;
+    width: 80%;
+    text-align: center;
+    padding: 20% 15%
+}
+
+label {
+    min-width: fit-content;
+}
