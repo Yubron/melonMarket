@@ -1,3 +1,11 @@
+.Sidebar {
+    background-color: sandybrown;
+    min-height: 100vh;
+    margin-top: 100px;
+    width: 20%;
+    text-align: center;
+  }
+
 .input_div {
     display: flex;
     justify-content: space-between;
@@ -10,10 +18,7 @@
     box-sizing : border-box;
 }
 
-.btn_group {
-    text-align: center;
-}
 
-.btn_login, .btn_register {
+.btn_login, .btn_register, .btn_logout {
  width: 80%;
 }

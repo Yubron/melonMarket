@@ -1,4 +1,6 @@
 import React from 'react';
+import Auth from './hoc/auth';
+
 import './App.css';
 import './Detail.css';
 import './Sidebar.css';
@@ -18,9 +20,9 @@ function App() {
         <Header />
         <div style={{ display: "flex" }}>
           <Switch>
-            <Route exact path="/" component={Main} />
-            <Route exact path="/detail" component={PostDetail} />
-            <Route exact path="/join" component={Join} />
+            <Route exact path="/" component={Auth(Main, null)} />
+            <Route exact path="/detail" component={Auth(PostDetail, null)} />
+            <Route exact path="/join" component={Auth(Join, true)} />
           </Switch>
           <Sidebar />
         </div>
