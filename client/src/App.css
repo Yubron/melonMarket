@@ -26,7 +26,7 @@
 
 
 
-.Detail {
+.Detail, .Sell {
   background-color: gray;
   min-height: 100vh;
   margin-top: 100px;

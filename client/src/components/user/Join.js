@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 function Join() {
@@ -8,21 +8,21 @@ function Join() {
         nickname: '',
         password: '',
         confirmPassword: '',
-      }); 
-    
-    const { email, nickname, password, confirmPassword } = inputs; 
-    
-    const onChangeInput = (e) => { 
-        const { name, value }  = e.target;
+    });
+
+    const { email, nickname, password, confirmPassword } = inputs;
+
+    const onChangeInput = (e) => {
+        const { name, value } = e.target;
         setInputs({
-          ...inputs,
-          [name]: value,
+            ...inputs,
+            [name]: value,
         });
     };
 
     const submitHandler = (event) => {
         event.preventDefault();
-        if(password !== confirmPassword) {
+        if (password !== confirmPassword) {
             return alert("비밀번호가 서로 다릅니다.");
         }
 
@@ -33,14 +33,14 @@ function Join() {
             nickname: nickname
         };
         axios.post('/api/users', body)
-        .then(function(res) {
-            if(res.data.isDuplicated) {
-                return alert(res.data.message)
-            } else if(res.data.success) {
-                alert(res.data.message);
-                return window.location = "/" 
-            }
-        });
+            .then(function (res) {
+                if (res.data.isDuplicated) {
+                    return alert(res.data.message)
+                } else if (res.data.success) {
+                    alert(res.data.message);
+                    return window.location = "/"
+                }
+            });
     }
 
 
@@ -49,22 +49,22 @@ function Join() {
             <form className="form_join" onSubmit={submitHandler}>
                 <div className="input_div">
                     <label> 이메일 </label>
-                    <input type="email" name="email" onChange={onChangeInput} value={email} required/>
+                    <input type="email" name="email" onChange={onChangeInput} value={email} required />
                 </div>
                 <hr />
                 <div className="input_div">
                     <label> 비밀번호 </label>
-                    <input type="password" name="password" onChange={onChangeInput} value={password} required/>
+                    <input type="password" name="password" onChange={onChangeInput} value={password} required />
                 </div>
                 <hr />
                 <div className="input_div">
                     <label> 비밀번호 확인 </label>
-                    <input type="password" name="confirmPassword" onChange={onChangeInput} value={confirmPassword} required/>
+                    <input type="password" name="confirmPassword" onChange={onChangeInput} value={confirmPassword} required />
                 </div>
                 <hr />
                 <div className="input_div">
                     <label> 닉네임 </label>
-                    <input type="nickname" name="nickname" onChange={onChangeInput} value={nickname} required/>
+                    <input type="nickname" name="nickname" onChange={onChangeInput} value={nickname} required />
                 </div>
                 <hr />
                 <button> 회원가입 </button>
