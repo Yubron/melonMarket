@@ -6,6 +6,7 @@ const { auth } = require("../middleware/auth");
 
 /* GET home page. */
 router.get('/auth', auth, (req, res) => {
+  console.log(">>> GET /users/auth")
   res.status(200).json({
     _id: req.user._id,
     email: req.user.email,
@@ -15,6 +16,7 @@ router.get('/auth', auth, (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  console.log(">>> POST /users")
   User.find().
     where('email').equals(req.body.email)
     .exec((err, user) => {

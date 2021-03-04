@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, setState } from 'react'
 
 function ProductSell() {
 
@@ -6,9 +6,10 @@ function ProductSell() {
         productName: '',
         productPrice: '',
         productDesc: '',
+        productImage: null,
     });
 
-    const { productName, productPrice, productDesc } = inputs;
+    const { productName, productPrice, productDesc, productImage } = inputs;
 
     const onChangeInput = (e) => {
         const { name, value } = e.target;
@@ -19,7 +20,13 @@ function ProductSell() {
     };
 
     const onChangeFile = (e) => {
-        const { file } = e.target.files;
+        console.log(e.target.files[0]);
+        
+        const { name, value } = e.target;
+        setInputs({
+            ...inputs,
+            [name]: value,
+        });
     }
 
 
@@ -32,7 +39,7 @@ function ProductSell() {
             <form className="form_sell" onSubmit={submitHandler}>
                 <div className="input_div">
                     <label> 파일 </label>
-                    <input type="file" accept="image/*" onChange={onChangeFile} multiple />
+                    <input type="file" name="productImage" accept="image/*" onChange={onChangeFile} />
                 </div>
                 <hr />
                 <div className="input_div">

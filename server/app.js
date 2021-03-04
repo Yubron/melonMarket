@@ -29,8 +29,8 @@ const connect = mongoose
 mongoose.set('debug', true);
 app.use(cors())
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -54,7 +54,8 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.send('Error');
+  // res.render('error');
 });
 
 module.exports = app;
