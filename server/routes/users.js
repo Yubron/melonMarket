@@ -23,10 +23,10 @@ router.post('/', (req, res) => {
       if (user.length >= 1) {
         return res.json({ isDuplicated: true, message: "중복된 Email 주소입니다." });
       } else {
-        const user = new User(req.body)
+        const user = new User(req.body);
         user.save((err, user) => {
-          if (err) return res.status(400).json({ success: false, err })
-          return res.status(200).json({ success: true, message: "회원가입이 완료되었습니다." })
+          if (err) return res.status(400).json({ success: false, err });
+          return res.status(200).json({ success: true, message: "회원가입이 완료되었습니다." });
         })
       }
     })
