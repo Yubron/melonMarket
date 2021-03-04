@@ -91,6 +91,9 @@ function Sidebar() {
                 <p> {user.userData.nickname} 님 반갑습니다. </p>
                 <div className="btn_group">
                     <button className="btn_logout" onClick={logoutHandler}> 로그아웃 </button>
+                    <Link to="/sell">
+                        <button className="btn_sell"> 상품판매 </button>
+                    </Link>
                 </div>
             </div>
         )

@@ -1,0 +1,12 @@
+.form_sell .input_div {
+    display: initial;
+}
+
+.input_div input {
+    width: 100%;
+}
+
+.input_div textarea {
+    width: 100%;
+    height: 200px;
+}
