@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
     product.save((err, product) => {
         if(err) return res.status(400).json({success: false, err});
 
-        return res.status(200).json({success: true, product: product})
+        return res.status(200).json({success: true, product: product, message: '상품 등록이 완료되었습니다.'})
     })
 });
 

@@ -2,10 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const productSchema = mongoose.Schema({
-    no: {
-        type: String,
-        // auto increase
-    },
+    // no : { auto-increment }
+    
     title: {
         type: String,
     },

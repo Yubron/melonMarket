@@ -1,15 +1,18 @@
+import axios from 'axios';
 import React, { useState, setState } from 'react'
+import { useSelector } from 'react-redux'
 
-function ProductSell() {
+function ProductRegister(props) {
 
     const [inputs, setInputs] = useState({
-        productName: '',
+        productTitle: '',
         productPrice: '',
         productDesc: '',
         productImage: null,
     });
 
-    const { productName, productPrice, productDesc, productImage } = inputs;
+    const user = useSelector(state => state.user);
+    const { productTitle, productPrice, productDesc, productImage } = inputs;
 
     const onChangeInput = (e) => {
         const { name, value } = e.target;
@@ -30,13 +33,28 @@ function ProductSell() {
     }
 
 
-    const submitHandler = (event) => {
+    const productRegisterHandler = (event) => {
         event.preventDefault();
+        const body = {
+            title: productTitle,
+            price: productPrice,
+            description: productDesc,
+            writer: user.userData._id,
+        }
+        axios.post('/api/products', body)
+            .then(function(res) {
+                if(res.data.success) {
+                    alert(res.data.message);
+                    return window.location = "/"
+                } else {
+                    return alert(res.data.err);
+                }
+            });
     }
 
     return (
         <div className="Sell">
-            <form className="form_sell" onSubmit={submitHandler}>
+            <form className="form_sell" onSubmit={productRegisterHandler}>
                 <div className="input_div">
                     <label> 파일 </label>
                     <input type="file" name="productImage" accept="image/*" onChange={onChangeFile} />
@@ -45,7 +63,7 @@ function ProductSell() {
                 <div className="input_div">
                     <label> 상품이름 </label>
                     <br />
-                    <input type="text" name="productName" onChange={onChangeInput} value={productName} required />
+                    <input type="text" name="productTitle" onChange={onChangeInput} value={productTitle} required />
                 </div>
                 <hr />
                 <div className="input_div">
@@ -67,4 +85,4 @@ function ProductSell() {
     )
 }
 
-export default ProductSell
+export default ProductRegister

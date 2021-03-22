@@ -13,7 +13,7 @@ import PostDetail from './components/postDetail/PostDetail';
 import Main from './components/main/Main';
 import Sidebar from './components/sidebar/Sidebar';
 import Join from './components/user/Join';
-import ProductSell from './components/product/ProductSell'
+import ProductRegister from './components/product/ProductRegister'
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
             <Route exact path="/" component={Auth(Main, null)} />
             <Route exact path="/detail" component={Auth(PostDetail, null)} />
             <Route exact path="/join" component={Auth(Join, false)} />
-            <Route exact path="/sell" component={Auth(ProductSell, true)} />
+            <Route exact path="/product/register" component={Auth(ProductRegister, true)} />
           </Switch>
           <Sidebar />
         </div>
